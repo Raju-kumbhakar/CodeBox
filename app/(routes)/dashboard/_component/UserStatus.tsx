@@ -1,11 +1,13 @@
 "use client"
 
+import { UserDetailContext } from '@/context/UserDetailContext';
 import { useUser } from '@clerk/nextjs';
 import Image from 'next/image';
-import React from 'react'
+import React, { useContext } from 'react'
 
 function UserStatus() {
     const {user} = useUser();
+    const {userDetail, setUSerDetail} = useContext(UserDetailContext);
   return (
     <div className='p-4 border-4 rounded-2xl '>
         <div className='flex gap-3 items-center'>
@@ -16,7 +18,7 @@ function UserStatus() {
             <div className='flex gap-3 items-center'>
                 <Image src={'/star.png'} alt='star' width={35} height={35}/>
                 <div>
-                    <h2 className='text-3xl font-game'>20</h2>
+                    <h2 className='text-3xl font-game'>{userDetail?.points}</h2>
                     <h2 className='font-game text-gray-500'>Total Rewards</h2>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import ExploreMore from './_component/ExploreMore'
 import InviteFriend from './_component/InviteFriend'
 import UserStatus from './_component/UserStatus'
 import UpgradeToPro from './_component/UpgradeToPro'
+import ExploreMoreCourse from './_component/ExploreMoreCourse'
 
 
 function page() {
@@ -14,6 +15,7 @@ function page() {
         <div className='col-span-2'>
           <WelcomeBanner/>
           <EnrolledCourses/>
+          <ExploreMoreCourse/>
           <ExploreMore/>
           <InviteFriend/>
         </div>

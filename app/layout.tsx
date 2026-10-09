@@ -3,6 +3,7 @@ import { Geist, Geist_Mono,Pixelify_Sans,Inter, Jersey_10 } from "next/font/goog
 import "./globals.css";
 import Provider from "./provider";
 import { ClerkProvider} from '@clerk/nextjs'
+import { Toaster } from "@/components/ui/sonner";
 
 
 const geistSans = Geist({
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             enableSystem
             disableTransitionOnChange>
          {children}
+         <Toaster/>
         </Provider>
         </body>
     </html>
