@@ -18,40 +18,19 @@ function ContentSection({courseExerciseData, loading}:Props){
       :
       <div>
         <h2 className='font-game text-3xl my-3 flex gap-2 items-center'><Book color="#11b642"/>{courseExerciseData?.exerciseData?.exerciseName}</h2>
-        <div
-        dangerouslySetInnerHTML={{
-          __html: ContentInfo?.exercisesContent?.content ?? '',
-        }}
-      />
+       <div dangerouslySetInnerHTML={{__html:ContentInfo?.exercisesContent?.content ?? ''}}/> 
 
-      <div>
-        <h2 className="font-game text-3xl mt-4 flex gap-2 items-center">
-          <Goal color="#2e7eff" />
-          Task
-        </h2>
+         <div>
+          <h2 className='font-game text-3xl mt-4 flex gap-2 items-center'><Goal color="#2e7eff"/>Task</h2>
+          <div className="p-4 border rounded-2xl bg-zinc-800"dangerouslySetInnerHTML={{__html:ContentInfo?.exercisesContent?.task ?? ''}}/>
+         </div>
 
-        <div
-          className="p-4 border rounded-2xl bg-zinc-800"
-          dangerouslySetInnerHTML={{
-            __html: ContentInfo?.exercisesContent?.task ?? '',
-          }}
-        />
-      </div>
-
-      <div>
-        <h2 className="font-game text-3xl mt-4 flex gap-2 items-center">
-          <Lightbulb color="#fac400" />
-          Hint
-        </h2>
-
-        <div
-          className="p-4 border rounded-2xl bg-zinc-800"
-          dangerouslySetInnerHTML={{
-            __html: ContentInfo?.exercisesContent?.hint ?? '',
-          }}
-        />
-      </div>
-    </div>
+         <div>
+          <h2 className='font-game text-3xl mt-4 flex gap-2 items-center'><Lightbulb color="#fac400"/>Hint</h2>
+          <div className="p-4 border rounded-2xl bg-zinc-800"
+          dangerouslySetInnerHTML={{__html:ContentInfo?.exercisesContent?.hint ?? ''}}/>
+         </div>
+       </div>
        } 
        </div> 
        ) 
